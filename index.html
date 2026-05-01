@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="تجربة رومانسية تفاعلية">
+  <title>رحلة قلب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="hearts-canvas" aria-hidden="true"></canvas>
+
+  <section id="gate" class="screen screen-visible">
+    <div class="panel gate-panel">
+      <p class="mystery">هناك كلمة واحدة... تفتح كل الذكريات.</p>
+      <h1>اكتبي كلمة السر لنبدأ الرحلة</h1>
+      <form id="password-form" class="password-form">
+        <input id="password-input" type="password" placeholder="كلمة السر" autocomplete="off" required>
+        <button class="primary-btn" type="submit">افتحي الحكاية</button>
+      </form>
+      <p id="password-error" class="error-message" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <main id="app" class="screen">
+    <section id="countdown-scene" class="scene hidden">
+      <div class="panel">
+        <h2 class="typing" data-text="منذ أول مرة التقينا..."></h2>
+        <p class="count-intro">هذا العداد يحسب كل لحظة حب منذ <strong>15 مايو 2023</strong>.</p>
+        <div class="count-grid">
+          <div class="count-item"><span id="days">0</span><small>يوم</small></div>
+          <div class="count-item"><span id="hours">0</span><small>ساعة</small></div>
+          <div class="count-item"><span id="minutes">0</span><small>دقيقة</small></div>
+          <div class="count-item"><span id="seconds">0</span><small>ثانية</small></div>
+        </div>
+        <div class="count-details">
+          <p>يعادل تقريبًا: <span id="weeks">0</span> أسبوع + <span id="remaining-days">0</span> أيام</p>
+          <p>ومرّ حتى الآن: <span id="total-hours">0</span> ساعة حب 💗</p>
+        </div>
+        <button class="next-btn" type="button" data-next="msg-1">التالي</button>
+      </div>
+    </section>
+
+    <section id="msg-1" class="scene hidden">
+      <div class="panel">
+        <h3>رسالة أولى</h3>
+        <p class="typing" data-text="أحياناً أحبك بصمت... وأحياناً يخونني الصمت فيفضحني."></p>
+        <button class="next-btn" type="button" data-next="msg-2">التالي</button>
+      </div>
+    </section>
+
+    <section id="msg-2" class="scene hidden">
+      <div class="panel">
+        <h3>رسالة ثانية</h3>
+        <p class="typing" data-text="كل يوم يمر، أتأكد أن قلبي اختارك مرة واحدة... واختارك للأبد."></p>
+        <button class="next-btn" type="button" data-next="msg-3">التالي</button>
+      </div>
+    </section>
+
+    <section id="msg-3" class="scene hidden">
+      <div class="panel">
+        <h3>رسالة ثالثة</h3>
+        <p class="typing" data-text="لو أخطأت، فاعتذاري ليس كلمة... اعتذاري وعد أن أحافظ على قلبك."></p>
+        <button class="next-btn" type="button" data-next="gallery">التالي</button>
+      </div>
+    </section>
+
+    <section id="gallery" class="scene hidden">
+      <div class="panel">
+        <h3 class="typing" data-text="ذكرياتنا الجميلة"></h3>
+        <div class="gallery-grid">
+          <figure class="photo-card">
+            <img src="https://images.unsplash.com/photo-1516589091380-5d8e87df6999?auto=format&fit=crop&w=1000&q=80" alt="ذكرى رومانسية 1" loading="lazy">
+            <figcaption>نظرة بداية الحكاية</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1000&q=80" alt="ذكرى رومانسية 2" loading="lazy">
+            <figcaption>لحظة ضحكة لا تنسى</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?auto=format&fit=crop&w=1000&q=80" alt="ذكرى رومانسية 3" loading="lazy">
+            <figcaption>قرب يجعل القلب مطمئنًا</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80" alt="ذكرى رومانسية 4" loading="lazy">
+            <figcaption>موعد جميل تحت الضوء</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=1000&q=80" alt="ذكرى رومانسية 5" loading="lazy">
+            <figcaption>وعد حب جديد كل يوم</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1000&q=80" alt="ذكرى رومانسية 6" loading="lazy">
+            <figcaption>نهاية يوم وبداية حلم</figcaption>
+          </figure>
+        </div>
+        <div class="music-box">
+          <p class="music-title">أغنيتنا تحت الذكريات 🎵</p>
+          <audio id="romantic-audio" controls loop preload="metadata">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <button class="next-btn" type="button" data-next="finale">التالي</button>
+      </div>
+    </section>
+
+    <section id="finale" class="scene hidden">
+      <div class="panel final-panel">
+        <h2>الرسالة الأخيرة</h2>
+        <p id="final-typing" class="typing" data-text="أنا آسف... وبحبك بصدق. إذا كان في قلبي مكان للسلام، فهو يبدأ منك وينتهي عندك."></p>
+        <button id="replay-hearts" class="primary-btn" type="button">انفجار قلوب ❤️</button>
+        <button id="show-memories-again" class="next-btn" type="button">عرض الذكريات مرة أخرى</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
